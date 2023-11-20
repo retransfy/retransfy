@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retransfy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="converter.css" />
+  </head>
+
+  <body>
+    <div class="rtformKtn" id="rtformMainKtn">
+      <div class="logoKont">
+        <img src="media/Logo.png" alt="Logo" class="logo" />
+        <div class="flags">
+          <img src="media/1200px-Flag_of_Ghana.svg.png" alt="Ghana Flag" />
+          <img src="media/flag-800.png" alt="Togo Flag" />
+          <img src="media/Flag-of-Benin.jpg" alt="Benin Flag" />
+          <img src="media/Flag_of_Côte_d'Ivoire.svg.png" alt="Ivory Coast Flag" />
+          <img src="media/flag-of-burkina-faso.jpg" alt="Burkina Faso Flag" />
+          <img src="media/download.png" alt="Senegal Flag" />
+        </div>
+        <h2>Converter</h2>
+      </div>
+
+      <form onsubmit="rtConvertAndDisplayRt(event);" id="rtformMain">
+        <label for="senderCountry">Sender's country:</label>
+        <p id="senderField"></p>
+        <select id="senderCountry" name="senderCountry" onchange="onSenderCountryChange()">
+          <option value="GHANA">Ghana</option>
+          <option value="TOGO">Togo</option>
+          <option value="BENIN">Benin</option>
+          <option value="IVORY COAST">Ivory Coast</option>
+          <option value="BURKINA FASO">Burkina Faso</option>
+        </select>
+
+        <label for="receiverCountry">Receiver's country:</label>
+        <p id="receiverField"></p>
+        <select id="receiverCountry" name="receiverCountry" onchange="onReceiverCountryChange()">
+          <option value="TOGO">Togo</option>
+          <option value="BENIN">Benin</option>
+          <option value="IVORY COAST">Ivory Coast</option>
+          <option value="BURKINA FASO">Burkina Faso</option>
+          <option value="GHANA">Ghana</option>
+        </select>
+        <div id="senderDiv">
+          <label for="sendAmount">Amount to send:</label>
+          <p id="sendAmountField"></p>
+          <input type="number" id="sendAmount" name="sendAmount" placeholder="Enter Amount to send" />
+        </div>
+        <div id="receiverDiv" class="receiverHidden">
+          <label for="receiveAmount">Amount to receive:</label>
+          <p id="receiveAmountField"></p>
+          <input type="number" id="receiveAmount" name="receiveAmount" placeholder="Enter Amount to receive" />
+        </div>
+        <div class="btn">
+          <button type="button" id="toggleButton">Switch to Amount to receive</button>
+        </div>
+
+        <label for="handleFee">Handle the fees</label>
+        <p id="handleField"></p>
+        <select id="handleFee" name="handleFee">
+          <option value="ADD FEE">Add transaction fee</option>
+          <option value="SUBSTRACT FEE">Substract transaction fee</option>
+        </select>
+
+        <button type="submit" class="submitbutton">Convert</button>
+      </form>
+
+      <p id="errorMessage"></p>
+
+      <p id="resultMessage"></p>
+      <button id="support" onclick="contactSupport()" style="display: none">Contact Support</button>
+
+      <button type="button" id="copyButton" onclick="showrtformFollow()">Copy</button>
+
+      <div class="ikons">
+        <a href="rate.html"><span class="material-icons"> arrow_back_ios </span></a>
+        <a href="index.html"><span class="material-icons" id="refresh"> home </span></a>
+        <a href="sendmoney.html"><span class="material-icons"> arrow_forward_ios </span></a>
+      </div>
+    </div>
+
+    <script src="converter.js"></script>
+  </body>
+</html>

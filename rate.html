@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retransfy</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="rate.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" onsubmit="calculateRate(event)">
+        <select name="currency" id="currency">
+          <option value="FCFA">TO FCFA</option>
+          <option value="GHS">TO GHS</option>
+        </select>
+        <input type="text" id="buyBN" name="buyBN" value="12.02" />
+        <input type="text" id="sellBN" name="sellBN" value="656.1" />
+        <input type="text" id="amount" name="amount" placeholder="Amount" value="1" />
+        <input type="text" id="paying" name="paying" placeholder="Paying" value="1" />
+        <p id="showrate" style="display: none"></p>
+        <p id="pnl" style="display: none"></p>
+        <button type="submit">Calculate</button>
+      </form>
+      <div class="ikons">
+        <a href="receipt_complete.html"><span class="material-icons"> arrow_back_ios </span></a>
+        <a href="index.html"><span class="material-icons" id="refresh"> home </span></a>
+        <a href="converter.html"><span class="material-icons"> arrow_forward_ios </span></a>
+      </div>
+    </div>
+    <script src="rate.js"></script>
+  </body>
+</html>
