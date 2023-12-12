@@ -145,13 +145,14 @@ function calculateTransactionFee() {
   else if (senderCountry !== "GHANA" && receiverCountry === "GHANA") {
     if (sendAmount < 1000) { transactionFee = 0; }
     else if (sendAmount >= 1000 && sendAmount <= 6000) { transactionFee = 500; }
-    else if (sendAmount >= 6001 && sendAmount <= 21000) { transactionFee = 1000; }
-    else if (sendAmount >= 21001 && sendAmount <= 40000) { transactionFee = 2000; }
+    else if (sendAmount >= 6001 && sendAmount <= 20000) { transactionFee = 1000; }
+    else if (sendAmount >= 20001 && sendAmount <= 40000) { transactionFee = 2000; }
     else if (sendAmount >= 40001 && sendAmount <= 60000) { transactionFee = 3000; }
     else if (sendAmount >= 60001 && sendAmount <= 100000) { transactionFee = 4000; }
     else if (sendAmount >= 100001 && sendAmount <= 200000) { transactionFee = 5000; }
-    else if (sendAmount >= 200001 && sendAmount <= 600000) { transactionFee = 8000; }
-    else if (sendAmount >= 600001 && sendAmount <= 1000000) { transactionFee = 10000; }}
+    else if (sendAmount >= 200001 && sendAmount <= 400000) { transactionFee = 8000; }
+    else if (sendAmount >= 400001 && sendAmount <= 500000) { transactionFee = 10000; }}
+    else if (sendAmount >= 500001 && sendAmount <= 1000000) { transactionFee = 15000; }}
 
   return transactionFee;
 }
@@ -191,13 +192,14 @@ function calculateTransactionFee2() {
     sendingAmount = (receiveAmount * 1000) / rate2;
     if (receiveAmount < ((rate2 * 1000) / 1000)) { transactionFee2 = 0; }
     else if ((receiveAmount >= ((rate2 * 1000) / 1000) && receiveAmount <= ((rate2 * 6000) / 1000))) { transactionFee2 = 500; }
-    else if ((receiveAmount >= ((rate2 * 6001) / 1000) && receiveAmount <= ((rate2 * 21000) / 1000))) { transactionFee2 = 1000; }
-    else if ((receiveAmount >= ((rate2 * 21001) / 1000) && receiveAmount <= ((rate2 * 40000) / 1000))) { transactionFee2 = 2000; }
+    else if ((receiveAmount >= ((rate2 * 6001) / 1000) && receiveAmount <= ((rate2 * 20000) / 1000))) { transactionFee2 = 1000; }
+    else if ((receiveAmount >= ((rate2 * 20001) / 1000) && receiveAmount <= ((rate2 * 40000) / 1000))) { transactionFee2 = 2000; }
     else if ((receiveAmount >= ((rate2 * 40001) / 1000) && receiveAmount <= ((rate2 * 60000) / 1000))) { transactionFee2 = 3000; }
     else if ((receiveAmount >= ((rate2 * 60001) / 1000) && receiveAmount <= ((rate2 * 100000) / 1000))) { transactionFee2 = 4000; }
     else if ((receiveAmount >= ((rate2 * 100001) / 1000) && receiveAmount <= ((rate2 * 200000) / 1000))) { transactionFee2 = 5000; }
-    else if ((receiveAmount >= ((rate2 * 200001) / 1000) && receiveAmount <= ((rate2 * 600000) / 1000))) { transactionFee2 = 8000; }
-    else if ((receiveAmount >= ((rate2 * 600001) / 1000) && receiveAmount <= ((rate2 * 1000000) / 1000))) { transactionFee2 = 10000; }
+    else if ((receiveAmount >= ((rate2 * 200001) / 1000) && receiveAmount <= ((rate2 * 400000) / 1000))) { transactionFee2 = 8000; }
+    else if ((receiveAmount >= ((rate2 * 400001) / 1000) && receiveAmount <= ((rate2 * 500000) / 1000))) { transactionFee2 = 10000; }
+    else if ((receiveAmount >= ((rate2 * 500001) / 1000) && receiveAmount <= ((rate2 * 1000000) / 1000))) { transactionFee2 = 15000; }
   }
   return transactionFee2;
 }
