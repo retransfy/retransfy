@@ -30,6 +30,7 @@ const receiverDiv = document.getElementById("receiverDiv");
 const handler = document.getElementById("handleFee");
 
 toggleButton.addEventListener("click", function () {
+  copyButton.style.display = "none";
   if (senderDiv.classList.contains("receiverHidden")) {
     senderDiv.classList.remove("receiverHidden");
     receiverDiv.classList.add("receiverHidden");
@@ -41,6 +42,7 @@ toggleButton.addEventListener("click", function () {
     resultMessage.textContent = "";
     resultMessage.style.display = "none";
     proceedButton.style.display = "none";
+    
 
   } else {
     senderDiv.classList.add("receiverHidden");
@@ -53,6 +55,7 @@ toggleButton.addEventListener("click", function () {
     resultMessage.textContent = "";
     resultMessage.style.display = "none";
     proceedButton.style.display = "none";
+
   }
 });
 
@@ -152,7 +155,6 @@ function calculateTransactionFee() {
     else if (sendAmount >= 100001 && sendAmount <= 200000) { transactionFee = 5000; }
     else if (sendAmount >= 200001 && sendAmount <= 400000) { transactionFee = 8000; }
     else if (sendAmount >= 400001 && sendAmount <= 500000) { transactionFee = 10000; }}
-    else if (sendAmount >= 500001 && sendAmount <= 1000000) { transactionFee = 15000; }}
 
   return transactionFee;
 }
@@ -172,7 +174,6 @@ function calculateTransactionFee2() {
     else if (receiveAmount >= ((2001 * 1000) / rate) && receiveAmount <= ((5000 * 1000) / rate)) { transactionFee2 = 40; }
     else if (receiveAmount >= ((5001 * 1000) / rate) && receiveAmount <= ((8000 * 1000) / rate)) { transactionFee2 = 70; }
     else if (receiveAmount >= ((8001 * 1000) / rate) && receiveAmount <= ((10000 * 1000) / rate)) { transactionFee2 = 95; }
-    else if (receiveAmount >= ((10001 * 1000) / rate) && receiveAmount <= (((rate * 1000) * 1000) / rate)) { transactionFee2 = 200; }
   }
 
 //(GHANA to BCB)
@@ -185,11 +186,9 @@ function calculateTransactionFee2() {
     else if (receiveAmount >= ((2001 * 1000) / rate) && receiveAmount <= ((5000 * 1000) / rate)) { transactionFee2 = 50; }
     else if (receiveAmount >= ((5001 * 1000) / rate) && receiveAmount <= ((8000 * 1000) / rate)) { transactionFee2 = 80; }
     else if (receiveAmount >= ((8001 * 1000) / rate) && receiveAmount <= ((10000 * 1000) / rate)) { transactionFee2 = 120; }
-    else if (receiveAmount >= ((10001 * 1000) / rate) && receiveAmount <= (((rate * 1000) * 1000) / rate)) { transactionFee2 = 300; }
   }
 //(ALL COUNTRIES to GHANA)
   else if (senderCountry !== "GHANA" && receiverCountry === "GHANA" && receiveAmount) {
-    sendingAmount = (receiveAmount * 1000) / rate2;
     if (receiveAmount < ((rate2 * 1000) / 1000)) { transactionFee2 = 0; }
     else if ((receiveAmount >= ((rate2 * 1000) / 1000) && receiveAmount <= ((rate2 * 6000) / 1000))) { transactionFee2 = 500; }
     else if ((receiveAmount >= ((rate2 * 6001) / 1000) && receiveAmount <= ((rate2 * 20000) / 1000))) { transactionFee2 = 1000; }
@@ -199,7 +198,6 @@ function calculateTransactionFee2() {
     else if ((receiveAmount >= ((rate2 * 100001) / 1000) && receiveAmount <= ((rate2 * 200000) / 1000))) { transactionFee2 = 5000; }
     else if ((receiveAmount >= ((rate2 * 200001) / 1000) && receiveAmount <= ((rate2 * 400000) / 1000))) { transactionFee2 = 8000; }
     else if ((receiveAmount >= ((rate2 * 400001) / 1000) && receiveAmount <= ((rate2 * 500000) / 1000))) { transactionFee2 = 10000; }
-    else if ((receiveAmount >= ((rate2 * 500001) / 1000) && receiveAmount <= ((rate2 * 1000000) / 1000))) { transactionFee2 = 15000; }
   }
   return transactionFee2;
 }
@@ -423,6 +421,8 @@ if (senderCountry === "GHANA" && receiverCountry !== "GHANA" && !sendAmount && r
     resultMessage.style.display = "block";
     resultMessage.className = "green_result";
     copyButton.style.display = "block";
+    copyButton.textContent = "Copy";
+    copyButton.style.backgroundColor = "#006dac";
 
     messageError.textContent = "";
     messageError.className = "";
@@ -442,6 +442,8 @@ if (senderCountry === "GHANA" && receiverCountry !== "GHANA" && !sendAmount && r
     resultMessage.style.display = "block";
     resultMessage.className = "green_result";
     copyButton.style.display = "block";
+    copyButton.textContent = "Copy";
+    copyButton.style.backgroundColor = "#006dac";
 
     messageError.textContent = "";
     messageError.className = "";
@@ -462,6 +464,8 @@ if (senderCountry === "GHANA" && receiverCountry !== "GHANA" && !sendAmount && r
     resultMessage.style.display = "block";
     resultMessage.className = "green_result";
     copyButton.style.display = "block";
+    copyButton.textContent = "Copy";
+    copyButton.style.backgroundColor = "#006dac";
 
     messageError.textContent = "";
     messageError.className = "";
@@ -481,6 +485,8 @@ if (senderCountry === "GHANA" && receiverCountry !== "GHANA" && !sendAmount && r
     resultMessage.style.display = "block";
     resultMessage.className = "green_result";
     copyButton.style.display = "block";
+    copyButton.textContent = "Copy";
+    copyButton.style.backgroundColor = "#006dac";
 
     messageError.textContent = "";
     messageError.className = "";
@@ -500,6 +506,8 @@ if (senderCountry === "GHANA" && receiverCountry !== "GHANA" && !sendAmount && r
     resultMessage.style.display = "block";
     resultMessage.className = "green_result";
     copyButton.style.display = "block";
+    copyButton.textContent = "Copy";
+    copyButton.style.backgroundColor = "#006dac";
 
     messageError.textContent = "";
     messageError.className = "";
@@ -519,6 +527,8 @@ if (senderCountry === "GHANA" && receiverCountry !== "GHANA" && !sendAmount && r
     resultMessage.style.display = "block";
     resultMessage.className = "green_result";
     copyButton.style.display = "block";
+    copyButton.textContent = "Copy";
+    copyButton.style.backgroundColor = "#006dac";
 
     messageError.textContent = "";
     messageError.className = "";
@@ -540,6 +550,8 @@ if (senderCountry === "GHANA" && receiverCountry !== "GHANA" && !sendAmount && r
     resultMessage.style.display = "block";
     resultMessage.className = "green_result";
     copyButton.style.display = "block";
+    copyButton.textContent = "Copy";
+    copyButton.style.backgroundColor = "#006dac";
 
     messageError.textContent = "";
     messageError.className = "";
@@ -559,6 +571,9 @@ if (senderCountry === "GHANA" && receiverCountry !== "GHANA" && !sendAmount && r
     resultMessage.style.display = "block";
     resultMessage.className = "green_result";
     copyButton.style.display = "block";
+    copyButton.textContent = "Copy";
+    copyButton.style.backgroundColor = "#006dac";
+    
 
     messageError.textContent = "";
     messageError.className = "";
@@ -578,6 +593,8 @@ if (senderCountry === "GHANA" && receiverCountry !== "GHANA" && !sendAmount && r
     resultMessage.style.display = "block";
     resultMessage.className = "green_result";
     copyButton.style.display = "block";
+    copyButton.textContent = "Copy";
+    copyButton.style.backgroundColor = "#006dac";
 
     messageError.textContent = "";
     messageError.className = "";
@@ -594,6 +611,10 @@ document.getElementById("copyButton").addEventListener("click", function () {
   textArea.select();
   document.execCommand("copy");
   document.body.removeChild(textArea);
+
+  document.getElementById("copyButton").textContent = "Copied"
+  document.getElementById("copyButton").style.backgroundColor = "gray"
+
 });
 
 
